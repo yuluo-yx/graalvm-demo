@@ -1,0 +1,111 @@
+[
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.ConfigDataLoaders"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "org.springframework.boot.logging.DeferredLogFactory"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.ConfigDataLocationResolvers"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLocationResolver",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "org.springframework.boot.logging.DeferredLogFactory"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.env.SpringFactoriesEnvironmentPostProcessorsFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataMissingEnvironmentPostProcessor",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.diagnostics.FailureAnalyzers"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataMissingEnvironmentPostProcessor$ImportExceptionFailureAnalyzer",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.diagnostics.FailureAnalyzers"
+    },
+    "name": "com.alibaba.cloud.nacos.diagnostics.analyzer.NacosConnectionFailureAnalyzer",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.SpringApplication"
+    },
+    "name": "com.alibaba.cloud.nacos.logging.NacosLoggingListener",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.StandardConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosJsonPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.StandardConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosXmlPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,306 @@
+[
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.support.DefaultListableBeanFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigAutoConfiguration",
+    "allDeclaredFields": true,
+    "queryAllDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      },
+      {
+        "name": "nacosConfigManager",
+        "parameterTypes": [
+          "com.alibaba.cloud.nacos.NacosConfigProperties"
+        ]
+      },
+      {
+        "name": "nacosConfigProperties",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      },
+      {
+        "name": "nacosContextRefresher",
+        "parameterTypes": [
+          "com.alibaba.cloud.nacos.NacosConfigManager",
+          "com.alibaba.cloud.nacos.refresh.NacosRefreshHistory"
+        ]
+      },
+      {
+        "name": "nacosRefreshHistory",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigAutoConfiguration",
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.context.annotation.ConfigurationClassPostProcessor"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigAutoConfiguration"
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.support.DefaultListableBeanFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigManager",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "condition": {
+      "typeReachable": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      },
+      {
+        "name": "setServerAddr",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties",
+    "methods": [
+      {
+        "name": "init",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.support.DefaultListableBeanFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "setServerAddr",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.properties.bind.JavaBeanBinder$Bean"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties"
+  },
+  {
+    "condition": {
+      "typeReachable": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.NacosConfigProperties$Config",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true,
+    "queryAllDeclaredConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.ConfigDataLoaders"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "org.springframework.boot.logging.DeferredLogFactory"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.ConfigDataLocationResolvers"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataLocationResolver",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": [
+          "org.springframework.boot.logging.DeferredLogFactory"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.env.SpringFactoriesEnvironmentPostProcessorsFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.configdata.NacosConfigDataMissingEnvironmentPostProcessor",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.SpringApplication"
+    },
+    "name": "com.alibaba.cloud.nacos.logging.NacosLoggingListener",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "com.alibaba.cloud.nacos.parser.NacosDataParserHandler"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosJsonPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.StandardConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosJsonPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "com.alibaba.cloud.nacos.parser.NacosDataParserHandler"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosXmlPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.context.config.StandardConfigDataLocationResolver"
+    },
+    "name": "com.alibaba.cloud.nacos.parser.NacosXmlPropertySourceLoader",
+    "queryAllPublicConstructors": true,
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.support.DefaultListableBeanFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.refresh.NacosContextRefresher",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.context.event.EventListenerMethodProcessor"
+    },
+    "name": "com.alibaba.cloud.nacos.refresh.NacosContextRefresher",
+    "methods": [
+      {
+        "name": "onApplicationEvent",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationEvent"
+        ]
+      },
+      {
+        "name": "setApplicationContext",
+        "parameterTypes": [
+          "org.springframework.context.ApplicationContext"
+        ]
+      }
+    ]
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.beans.factory.support.DefaultListableBeanFactory"
+    },
+    "name": "com.alibaba.cloud.nacos.refresh.NacosRefreshHistory",
+    "allDeclaredFields": true,
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.boot.autoconfigure.AutoConfigurationSorter$AutoConfigurationClasses"
+    },
+    "name": "com.alibaba.cloud.nacos.refresh.condition.ConditionalOnNonDefaultBehavior",
+    "queryAllDeclaredMethods": true
+  },
+  {
+    "condition": {
+      "typeReachable": "org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader"
+    },
+    "name": "com.alibaba.cloud.nacos.refresh.condition.NonDefaultBehaviorCondition",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  }
+]

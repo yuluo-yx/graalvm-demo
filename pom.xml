@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.example</groupId>
+	<artifactId>graalvm-demo</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<dependencies>
+	<dependency>
+		<groupId>com.alibaba.cloud</groupId>
+		<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-commons</artifactId>
+	</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2022.0.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>2022.0.0.0-RC1</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>native</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-maven-plugin</artifactId>
+							<configuration>
+								<jvmArguments>
+									-agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image/,experimental-conditional-config-filter-file=src/main/resources/conditional-filter.json,access-filter-file=src/main/resources/user-code-filter.json
+									<!-- 被认为包含在这个过滤器中的类将被指定为用户代码类 -->
+									<!--experimental-conditional-config-filter-file=src/main/resources/user-code-filter.json,-->
+									<!-- 要进一步过滤生成的配置 -->
+									<!-- conditional-config-class-filter-file=<path> -->
+									<!-- 访问过滤器适用于访问的目标。因此，访问过滤器可以直接从生成的配置中排除包和类（及其成员）。 -->
+									<!--access-filter-file=src/main/resources/conditional-filter.json-->
+									<!-- 过滤机制通过识别执行访问的 Java 方法（也称为调用方方法）并将其声明类与一系列过滤规则相匹配来工作 -->
+									<!--caller-filter-file=src/main/resources/-->
+								</jvmArguments>
+								<image>
+									<builder>paketobuildpacks/builder:tiny</builder>
+									<env>
+										<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+									</env>
+								</image>
+
+							</configuration>
+							<executions>
+								<execution>
+									<id>process-aot</id>
+									<goals>
+										<goal>process-aot</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+						<plugin>
+							<groupId>org.graalvm.buildtools</groupId>
+							<artifactId>native-maven-plugin</artifactId>
+							<configuration>
+								<!--<agent>
+								<enabled>true</enabled>
+								<defaultMode>conditional</defaultMode>
+								<modes>
+								<conditional>
+								<userCodeFilterPath>src/main/resources/user-code-filter.json</userCodeFilterPath>
+								</conditional>
+								</modes>
+								</agent>-->
+								<classesDirectory>${project.build.outputDirectory}</classesDirectory>
+								<metadataRepository>
+									<enabled>true</enabled>
+									<localPath>
+										E:\Java\apache_maven\apache-maven-3.9.0\repository\org\graalvm\buildtools\graalvm-reachability-metadata\0.9.19\graalvm-reachability-metadata-0.9.19-repository.zip
+									</localPath>
+								</metadataRepository>
+								<requiredVersion>22.3</requiredVersion>
+							</configuration>
+							<executions>
+								<execution>
+									<id>add-reachability-metadata</id>
+									<goals>
+										<goal>add-reachability-metadata</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
+
+</project>
